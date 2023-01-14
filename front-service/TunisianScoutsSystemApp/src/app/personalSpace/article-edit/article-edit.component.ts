@@ -21,7 +21,7 @@ export class ArticleEditComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params)=>{
         this.articleId=params['articleId'];
-         console.log(this.articleId);
+        //  console.log(this.articleId);
       }
     )
   }
