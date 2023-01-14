@@ -42,7 +42,7 @@ app.use(router);
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to bezkoder application." });
+    res.json({ message: "Welcome to ouma application." });
   });
 
 app.listen(process.env.APP_PORT,()=>{

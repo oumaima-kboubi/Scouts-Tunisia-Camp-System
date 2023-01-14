@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+  <div class="container">
+    <div class="navbar-translate">
+      <a style="margin-right: 330px;" class="navbar-brand" [routerLink]="[ '/']">NeoveeApp</a>
+      <!--color: #fb4807-->
+      <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse"
+              data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+              aria-label="Toggle navigation" (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto">
+        <!--        <li class="nav-item">-->
+        <!--          &lt;!&ndash;*ngIf="!isDocumentation()"&ndash;&gt;-->
+        <!--          <a class="nav-link" rel="tooltip" title="Go Home" data-placement="bottom" [routerLink]="[ '/getAllArticles']">-->
+        <!--            <i class="fa fa-home"></i>-->
+        <!--            <p class="d-lg-none">Home</p>-->
+        <!--          </a>-->
+        <!--        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="See All Articles" data-placement="bottom"
+             [routerLink]="[ '/getAllArticles']">
+            <i class="fa fa-book"></i>
+            <p class="d-lg-none">Articles</p>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" rel="tooltip" title="See Our Mentors" data-placement="bottom"
+             [routerLink]="[ '/']">
+            <i class="fa fa-users"></i>
+            <p class="d-lg-none">Authors</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="See Our Mentors" data-placement="bottom"
+             [routerLink]="[ '/']">
+            <i class="fa fa-user"></i>
+            <p class="d-lg-none">Profile</p>
+          </a>
+        </li>
+        <!--        <li class="nav-item">-->
+        <!--          <a class="nav-link" rel="tooltip" title="More About Us" data-placement="bottom"-->
+        <!--             [routerLink]="[ '/']">-->
+        <!--            <i class="fa fa-heart"></i>-->
+        <!--            <p class="d-lg-none">About Us</p>-->
+        <!--          </a>-->
+        <!--        </li>-->
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/myspace']"><i class="fa fa-heart"></i> My Space</a>
+        </li>
+        <li class="nav-item">
+          <!--*ngIf="isHome()"-->
+          <!--          <a (click)="onClicked()" class="btn btn-danger btn-round">{{loggedIn?"Log out":"Sign in"}}</a>-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="See Our Mentors" data-placement="bottom"
+             [routerLink]="[ '/register']">
+            <i class="fa fa-power-off"></i>
+            <p class="d-lg-none">Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

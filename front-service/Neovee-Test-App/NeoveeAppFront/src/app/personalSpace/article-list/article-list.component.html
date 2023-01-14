@@ -1,0 +1,11 @@
+<app-nav></app-nav>
+<div class="main-content" id="sect5" >
+  <div class="container-fluid" style="padding-top: 80px">
+    <div class="row" style="padding-top: 20px " id="sect4">
+
+      <div class="col-md-4"   *ngFor=" let article of articles">
+        <app-article-list-card  title="{{article.title}}" content="{{article.content}}" author="{{article.author}}" id="{{article.id}}" updateDate="{{article.updateDate}}"></app-article-list-card>
+      </div>
+      </div>
+  </div>
+</div>

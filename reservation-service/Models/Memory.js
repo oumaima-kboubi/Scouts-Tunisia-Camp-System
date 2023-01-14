@@ -5,9 +5,12 @@ memorySchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    description : {
+    content : {
         type: String,
         required: true,   
+    },
+    author : {
+        type: String,
     },
     liked :{
         type: Array,
@@ -18,4 +21,4 @@ memorySchema = mongoose.Schema({
     },
 })
 
-module.exports= mongoose.model('campCenter',memorySchema)
+module.exports= mongoose.model('memories',memorySchema)

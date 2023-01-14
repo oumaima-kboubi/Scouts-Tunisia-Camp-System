@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('/assets/img/login-image.jpg');">
+    <div class="filter"></div>
+    <div class="container ">
+      <div class="row  justify-content-center ">
+        <div class="col-lg-4 col-sm-4 mr-auto ml-auto ">
+          <div class="card card-register  ">
+            <h3 class="title">Join Us</h3>
+
+            <form class="register-form" (ngSubmit)="onSubmit(registerFormulaire)"  #registerFormulaire="ngForm">
+
+              <label>Username</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="nc-icon nc-single-02" style="margin-top: 5px;"></i>
+                              </span>
+                </div>
+
+                <input type="text" class="form-control" placeholder="Userame" name="username" required   [(ngModel)]="user.username" #username="ngModel" (focus)="focus=true" (blur)="focus=false" >
+
+              </div>
+              <div *ngIf="username.invalid && username.touched"
+                   class="alert alert-danger">
+                Username is required
+              </div>
+
+
+
+              <label>Email</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-email-85" style="margin-top: 5px;"></i>
+                                </span>
+                </div>
+                <input type="email" class="form-control" name="email"  placeholder="Email" (focus)="focus=true" (blur)="focus=false" required  [(ngModel)]="user.email" #email="ngModel" >
+
+
+              </div>
+              <div *ngIf="email.invalid && email.touched"
+                   class="alert alert-danger">
+                Email is required
+              </div>
+
+
+              <label>Password</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="nc-icon nc-key-25" style="margin-top: 5px;"></i>
+                                </span>
+                </div>
+                <input type="password" class="form-control" name="password" minlength="4"  placeholder="Password" required [(ngModel)]="user.password" #password="ngModel"  (focus)="focus1=true" (blur)="focus1=false">
+
+
+              </div>
+              <div *ngIf="password.invalid && password.touched"
+                   class="alert alert-danger">
+                Password must be at least 4 characters long!
+              </div>
+
+              <button class="btn btn-danger btn-block btn-round "  (click)="onSubmit(registerFormulaire)" [disabled]="registerFormulaire.invalid" [routerLink]="['/login']" style=" margin-left:36%;">Register</button>
+
+            </form>
+            <div class="forgot" >
+              <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="btn btn-link btn-danger">Already have an account?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

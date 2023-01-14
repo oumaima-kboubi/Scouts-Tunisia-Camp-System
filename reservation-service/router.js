@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { getMemories , createMemory, updateMemory, deleteMemory } = require("./Controllers/memoryController");
+const { getMemories , createMemory, updateMemory, deleteMemory, getMemoriesById } = require("./Controllers/memoryController");
 
 
 router.get("/", (req, res) => {
@@ -14,5 +14,5 @@ router.put("/memories/:memoryID", updateMemory);
 
 router.delete("/memories/:memoryID", deleteMemory);
 
-
+router.get("/memoriesById/:username", getMemoriesById);
 module.exports = router;

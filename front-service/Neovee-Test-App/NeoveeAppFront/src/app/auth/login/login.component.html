@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('/assets/img/login-image.jpg');">
+    <div class="filter"></div>
+    <div class="container ">
+      <div class="row  justify-content-center ">
+        <div class="col-lg-4 col-sm-4 mr-auto ml-auto ">
+          <div class="card card-register  ">
+            <h3 class="title">Welcome</h3>
+            <form class="register-form"  (ngSubmit)="onSubmit(loginFormulaire)" #loginFormulaire="ngForm" >
+
+              <label>Email</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="nc-icon nc-single-02" style="margin-top: 5px;"></i>
+                              </span>
+                </div>
+                <input type="email" class="form-control" name="email"  placeholder="Email" (focus)="focus=true" (blur)="focus=false" required [(ngModel)]="user.email" #email="ngModel"  >
+
+
+              </div>
+              <div *ngIf="email.invalid && email.touched"
+                   class="alert alert-danger">
+                Email is required
+              </div>
+
+
+              <label>Password</label>
+              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <i class="nc-icon nc-key-25" style="margin-top: 5px;"></i>
+                              </span>
+                </div>
+                <input type="password" class="form-control" name="password" minlength="4" placeholder="Password" required  [(ngModel)]="user.password" #password="ngModel" (focus)="focus1=true" (blur)="focus1=false">
+
+              </div>
+              <div  *ngIf="password.invalid && password.touched"
+                   class="alert alert-danger">
+                Password is required
+              </div>
+
+              <button class="btn btn-danger  btn-block btn-round " style=" margin-left:36%;" type="button" [disabled]="loginFormulaire.invalid"  (click)="onSubmit(loginFormulaire)"  >Let's GO</button>
+
+            </form>
+            <div class="forgot" >
+              <div class=row>
+                <a  [routerLink]="[ '/register']" class=" btn-link btn btn-danger col" >Don't have an account?</a> <!--style="margin-top: 30px; color: #da4813 ; font-weight: bold; text-align: center;"-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

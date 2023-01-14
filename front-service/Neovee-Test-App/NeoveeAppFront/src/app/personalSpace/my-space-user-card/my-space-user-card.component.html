@@ -1,0 +1,17 @@
+
+<div class="card card-profile">
+  <div class="card-avatar">
+    <a href="javascript:void(0)">
+      <img class="img" src="./assets/img/hermione.png" />
+    </a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-category text-gray">Tunisian Scouts Member</h4>
+    <h2 class="card-title" style="color: #0976b4;font-weight: bold ">{{user.username | titlecase}}</h2>
+    <p class="card-description">
+      Software engineer at INSAT  <i class="fa fa-heart" style="color: darkred" ></i> because my Hogwarts  <i class="fa fa-magic" style="color: darkblue"></i> letter never came!
+    </p>
+    <a href="javascript:void(0)" class="btn btn-danger btn-round" [routerLink]="[ '/myspace']" (click)="addArticle()">Add an Article</a>
+  </div>
+</div>
+

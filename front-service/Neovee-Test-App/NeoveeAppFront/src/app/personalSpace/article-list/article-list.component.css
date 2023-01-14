@@ -1,0 +1,15 @@
+#sect4 {
+  height: 650px;
+  color: #fff;background-image: url("../../../assets/img/login-image.jpg");
+  background-size: 100% !important; ;
+  background-size: cover;
+  height: 100% !important;
+  background-repeat: repeat;
+}
+#sect5 {
+  height: 650px;
+  color: #fff;background-image: url("../../../assets/img/login-image.jpg");
+  background-size: 100% !important; ;
+  background-size: cover;
+  height: 100%;
+}

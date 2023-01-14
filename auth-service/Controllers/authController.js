@@ -7,10 +7,10 @@ const register = async (req, res) => {
   // Our register logic starts here
   try {
     // Get user input
-    const { firstName, lastName, email, password } = req.body;
+    const { username, email, password } = req.body;
 
     // Validate user input
-    if (!(email && password && firstName && lastName)) {
+    if (!(email && password && username)) {
       res.status(400).send("All input is required");
     }
 
@@ -27,8 +27,7 @@ const register = async (req, res) => {
 
     // Create user in our database
     const user = await User.create({
-      first_name: firstName,
-      last_name: lastName,
+      username: username,
       email: email.toLowerCase(), // sanitize
       password: encryptedUserPassword,
     });

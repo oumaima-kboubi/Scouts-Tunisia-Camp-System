@@ -1,0 +1,7 @@
+#sect3 {
+  height: 650px;
+  color: #fff;background-image: url("../../../assets/img/login-image.jpg");
+  background-size: 100% !important; ;
+  background-size: cover;
+  height: 100%;
+}

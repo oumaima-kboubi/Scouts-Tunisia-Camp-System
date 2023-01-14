@@ -1,0 +1,16 @@
+<app-nav></app-nav>
+<div class="main-content" id="sect2">
+  <div class="container-fluid" style="padding-top: 100px">
+    <div class="row" id="sect3">
+      <div class="col-md-8" >
+        <div   *ngFor=" let article of myArticles" >
+          <app-my-space-article-card  title="{{article.title}}" content="{{article.content}}" author="{{article.author}}" id="{{article._id}}" updateDate="{{article.updateDate}}"></app-my-space-article-card>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <app-my-space-user-card></app-my-space-user-card>
+      </div>
+    </div>
+  </div>
+</div>
+

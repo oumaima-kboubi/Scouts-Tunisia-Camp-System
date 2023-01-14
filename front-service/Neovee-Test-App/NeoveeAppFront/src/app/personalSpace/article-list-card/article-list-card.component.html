@@ -1,0 +1,22 @@
+
+<div class="card card-profile" style="margin: 50px">
+  <div class="card-avatar">
+    <a href="javascript:void(0)">
+      <img class="img" src="./assets/img/article.jpg" />
+    </a>
+  </div>
+  <div class="card-body">
+    <h3 class="card-category text-gray" style="color: #0976b4;font-weight: bold ">{{author | titlecase}}</h3>
+    <h1 class="card-title" style="color: orangered;font-weight: bolder ">{{title}} </h1>
+    <h4 class="card-category text-gray">{{updateDate}}</h4>
+    <p class="card-description">
+      {{content}}
+    </p>
+
+    <i [hidden]="hideLike" (click)="likeArticle(id)"
+      class="fa fa-heart" style="font-size:30px; color: {{heartColor}}"  ></i>
+<!--    <a href="javascript:void(0)" class="btn btn-danger btn-social" >Like</a>-->
+<!--    <a href="javascript:void(0)" class="btn btn-danger btn-round" (click)="showPreview(id)">Preview</a>-->
+  </div>
+</div>
+

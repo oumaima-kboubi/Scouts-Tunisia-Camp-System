@@ -1,0 +1,46 @@
+
+  <div class="card" >
+    <div class="card-header card-header-danger">
+      <h1 class="card-title" style="color: orangered;font-weight: bold; margin-top: 10px;margin-left: 10px ">Add a memory</h1>
+      <p class="card-category">Feel free to be creative  <i class="fa fa-smile-o"></i></p>
+    </div>
+    <div class="card-body">
+      <form class="register-form"  (ngSubmit)="onSubmit(addArticleFormulaire)" #addArticleFormulaire="ngForm" >
+
+        <label>Title</label>
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}" >
+          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                              <i class="fa fa-pencil" style="margin-top: 5px;"></i>
+                              </span>
+          </div>
+          <input type="text" class="form-control" name="title"  placeholder="The title" (focus)="focus=true" (blur)="focus=false" required [(ngModel)]="article.title" #title="ngModel"  >
+
+
+        </div>
+        <div *ngIf="title.invalid && title.touched"
+             class="alert alert-danger">
+          The title is required
+        </div>
+
+
+        <label>Content</label>
+        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                   <i class="fa fa-book" style="margin-top: 5px;"></i>
+                              </span>
+          </div>
+          <textarea type="text" class="form-control" name="content"  placeholder="Your article's content goes here" required  [(ngModel)]="article.content" #content="ngModel" (focus)="focus1=true" (blur)="focus1=false"></textarea>
+
+        </div>
+        <div  *ngIf="content.invalid && content.touched"
+              class="alert alert-danger">
+          The content is required
+        </div>
+
+        <button class="btn btn-danger  btn-block btn-round " style=" margin-left:36%;" type="button" [disabled]="addArticleFormulaire.invalid"  (click)="onSubmit(addArticleFormulaire)"  >Add Memory</button>
+
+      </form>
+    </div>
+  </div>

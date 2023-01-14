@@ -1,0 +1,23 @@
+
+<div class="card card-profile" style="margin: 80px">
+  <div class="card-avatar">
+    <a href="javascript:void(0)">
+      <img class="img" src="./assets/img/article.jpg" />
+    </a>
+  </div>
+  <div class="card-body">
+    <h3 class="card-category text-gray" style="color: #0976b4;font-weight: bold ">{{author | titlecase}}</h3>
+    <h1 class="card-title" style="color: orangered;font-weight: bolder ">{{title}} </h1>
+    <h4 class="card-category text-gray">{{updateDate}}</h4>
+    <p class="card-description">
+      {{content}}
+    </p>
+
+<!--    <i [hidden]="hideLike"-->
+<!--       class="fa fa-heart" style="font-size:30px"  ></i>-->
+        <a href="javascript:void(0)" class="btn btn-light btn-round" [routerLink]="['/editArticle/',id]">Edit</a>
+        <!-- <a href="javascript:void(0)" class="btn btn-light btn-round" (click)="editMyArticle(id)">Edit</a> -->
+        <a href="javascript:void(0)" class="btn btn-danger btn-round" (click)="deleteMyArticle(id)" >Delete</a>
+  </div>
+</div>
+

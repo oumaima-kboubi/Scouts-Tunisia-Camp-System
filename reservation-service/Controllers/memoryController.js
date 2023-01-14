@@ -8,12 +8,23 @@ const getMemories = (req, res) => {
     res.json(memory);
   });
 };
+const getMemoriesById = (req, res) => {
+  Memory.find(
+    { author: req.params.username },
+    (err, memory) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(memory);
+  });
+};
 
   
 const createMemory = (req, res) => {
     const memory = new Memory({
       title: req.body.title,
-      description: req.body.description,
+      content: req.body.content,
+      author: req.body.author,
     });
   
     memory.save((err, memory) => {
@@ -31,7 +42,8 @@ const createMemory = (req, res) => {
       {
         $set: {
           title: req.body.title,
-          description: req.body.description,
+          content: req.body.content,
+          author: req.body.author,
         },
       },
       { new: true },
@@ -51,6 +63,6 @@ const createMemory = (req, res) => {
   
 
 module.exports = {
-   getMemories, createMemory, updateMemory, deleteMemory
+   getMemories, createMemory, updateMemory, deleteMemory, getMemoriesById
 };
   
