@@ -1,11 +1,11 @@
 const mongoose =require('mongoose');
 
 memorySchema = mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: true,
     },
-    desciption : {
+    description : {
         type: String,
         required: true,   
     },
