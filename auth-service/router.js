@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { register, login, welcome } = require("./Controllers/authController");
-const auth = require("./middleware/auth");
+const auth = require("./Middleware/auth");
 const cors = require("cors");
 
 const corsOptions = {

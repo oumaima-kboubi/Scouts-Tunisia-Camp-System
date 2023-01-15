@@ -1,4 +1,10 @@
 const Memory = require("../Models/Memory");
+const {articleAddedCounter} = require('../metrics')
+var winston = require('winston');
+// var {Loggly} = require('winston-loggly-bulk');
+const {logger} = require('../logger')
+
+const childLogger = logger.child({ service: 'memory-service'});
 
 const getMemories = (req, res) => {
   Memory.find((err, memory) => {
@@ -13,8 +19,10 @@ const getMemoriesById = (req, res) => {
     { author: req.params.username },
     (err, memory) => {
     if (err) {
+      
       res.send(err);
     }
+   
     res.json(memory);
   });
 };
@@ -29,8 +37,15 @@ const createMemory = (req, res) => {
   
     memory.save((err, memory) => {
       if (err) {
+        articleAddedCounter.inc({'route': '/memories', 'status_code': 200,'requestType':'post'})
         res.send(err);
       }
+      logger.info('Hello, world!');
+      // logger.info('Memory Article Created!');
+      // winston.log('info', "Memory Article Created!");
+      articleAddedCounter.inc({'route': '/memories', 'status_code': 200,'requestType':'post'})
+      // console.log(req.requestId);
+      childLogger.info('Creating a memory', { request_id: req.requestId});
       res.json(memory);
     });
   };
@@ -57,8 +72,14 @@ const createMemory = (req, res) => {
   
   const deleteMemory = (req, res) => {
     Memory.deleteOne({ _id: req.params.memoryID })
-      .then(() => res.json({ message: "Memory Deleted" }))
-      .catch((err) => res.send(err));
+      .then(() => 
+      {
+        childLogger.error('Memory deleted', { request_id: req.requestId});
+        res.json({ message: "Memory Deleted" })
+      }).catch((err) =>{ 
+        res.send(err)
+        childLogger.info('Memory isn\'t deleted', { request_id: req.requestId});
+      });
   };
   
 

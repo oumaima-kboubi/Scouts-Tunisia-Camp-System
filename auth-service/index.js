@@ -2,10 +2,12 @@ const express= require('express');
 const cors = require("cors");
 const mongoose= require('mongoose');
 const router = require("./router");
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 const app=express();
 const path = require('path')
+const promClient = require('prom-client');
+const {activeConnections,total_logs} = require('./metrics')
 
 require('dotenv').config({
     path: path.join(__dirname, "/.env")
@@ -31,6 +33,7 @@ require('dotenv').config({
     }
 }
 
+mongoose.set('strictQuery', true);
 
 connect()
 
@@ -43,8 +46,16 @@ app.use(router);
 
 // simple route
 app.get("/", (req, res) => {
+    total_logs.inc();
     res.json({ message: "Welcome to ouma application." });
   });
+
+app.get('/metrics', async (req, res) => {
+    res.set('Content-Type', promClient.register.contentType);
+   const metrics = await promClient.register.metrics();
+   res.end(metrics);
+});
+
 
 app.listen(process.env.APP_PORT,()=>{
     console.log("Server started on port ",process.env.APP_PORT)

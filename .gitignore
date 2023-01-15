@@ -1,0 +1,57 @@
+grafana-enterprise-9.3.2.windows-amd64
+logstash-8.6.0-windows-x86_64
+prometheus-2.41.0.windows-amd64
+datadog-agent-7-latest.amd64.msi
+auth-service/node_modules
+auth-service/.env
+reservation-service/node_modules
+reservation-service/.env
+
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+front-service/TunisianScoutsSystemApp/dist
+front-service/TunisianScoutsSystemApp/tmp
+front-service/TunisianScoutsSystemApp/out-tsc
+# Only exists if Bazel was run
+front-service/TunisianScoutsSystemApp//bazel-out
+front-service/TunisianScoutsSystemApp/
+# dependencies
+front-service/TunisianScoutsSystemApp/node_modules
+front-service/TunisianScoutsSystemApp/
+/# profiling files
+front-service/TunisianScoutsSystemApp/chrome-profiler-events*.json
+front-service/TunisianScoutsSystemApp/
+/# IDEs and editors
+front-service/TunisianScoutsSystemApp/.idea
+front-service/TunisianScoutsSystemApp/.project
+front-service/TunisianScoutsSystemApp/.classpath
+front-service/TunisianScoutsSystemApp/.c9/
+front-service/TunisianScoutsSystemApp/*.launch
+front-service/TunisianScoutsSystemApp/.settings/
+front-service/TunisianScoutsSystemApp/*.sublime-workspace
+front-service/TunisianScoutsSystemApp/
+# IDE - VSCode
+front-service/TunisianScoutsSystemApp/.vscode/*
+front-service/TunisianScoutsSystemApp/!.vscode/settings.json
+front-service/TunisianScoutsSystemApp/!.vscode/tasks.json
+front-service/TunisianScoutsSystemApp/!.vscode/launch.json
+front-service/TunisianScoutsSystemApp/!.vscode/extensions.json
+front-service/TunisianScoutsSystemApp/.history/*
+front-service/TunisianScoutsSystemApp/
+# misc
+front-service/TunisianScoutsSystemApp/.angular/cache
+front-service/TunisianScoutsSystemApp/.sass-cache
+front-service/TunisianScoutsSystemApp/connect.lock
+front-service/TunisianScoutsSystemApp/coverage
+front-service/TunisianScoutsSystemApp/libpeerconnection.log
+front-service/TunisianScoutsSystemApp/npm-debug.log
+front-service/TunisianScoutsSystemApp/yarn-error.log
+front-service/TunisianScoutsSystemApp/testem.log
+front-service/TunisianScoutsSystemApp/typings
+front-service/TunisianScoutsSystemApp/
+front-service/TunisianScoutsSystemApp/# System Files
+front-service/TunisianScoutsSystemApp/.DS_Store
+front-service/TunisianScoutsSystemApp/Thumbs.db
+front-service/TunisianScoutsSystemApp/

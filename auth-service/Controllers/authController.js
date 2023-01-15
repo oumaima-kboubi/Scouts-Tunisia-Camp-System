@@ -1,9 +1,11 @@
 const User = require("../Models/User");
 var bcrypt = require('bcrypt');
 var jwt = require("jsonwebtoken");
-  
-const register = async (req, res) => {
+const {loginRequestCounter, registerRequestCounter,httpRequestDurationMicroseconds, activeConnections,total_logs} = require('../metrics')
 
+const register = async (req, res) => {
+  const start = Date.now();
+  total_logs.inc();
   // Our register logic starts here
   try {
     // Get user input
@@ -19,6 +21,8 @@ const register = async (req, res) => {
     const oldUser = await User.findOne({ email });
 
     if (oldUser) {
+      
+      registerRequestCounter.inc({'route': '/register', 'status_code': 400,'requestType':'post'})
       return res.status(409).send("User Already Exist. Please Login");
     }
 
@@ -43,9 +47,12 @@ const register = async (req, res) => {
     // save user token
     user.token = token;
 
-    // return new user
+    registerRequestCounter.inc({'route': '/register', 'status_code': 200,'requestType':'post'})
     res.status(201).json(user);
+    const duration = Date.now() - start;
+    httpRequestDurationMicroseconds.labels('/register').observe(duration / 1000)
   } catch (err) {
+    registerRequestCounter.inc({'route': '/register', 'status_code': 400,'requestType':'post'})
     console.log(err);
   }
   };
@@ -53,6 +60,9 @@ const register = async (req, res) => {
   const login = async (req, res) => {
 
     try {
+      activeConnections.inc();
+      total_logs.inc();
+      const start = Date.now();
         // Get user input
         const { email, password } = req.body;
     
@@ -74,17 +84,27 @@ const register = async (req, res) => {
           );
             user.token = token 
             // res.setHeader('x-access-token',token)
+          loginRequestCounter.inc({'route': '/login', 'status_code': 200,'requestType':'post'})
+          const duration = Date.now() - start;
+          httpRequestDurationMicroseconds.labels('/login').observe(duration / 1000)
+          activeConnections.dec();
           return res.status(200).json(user);
         }
+        loginRequestCounter.inc({'route': '/login', 'status_code': 400,'requestType':'post'})
+        const duration = Date.now() - start;
+        httpRequestDurationMicroseconds.labels('/login').observe(duration / 1000)
         return res.status(400).send("Invalid Credentials");
     
       // Our login logic ends here
     }catch (err) {
         console.log(err);
+       
+        res.status(404).json({ message: err });
       }
 };
 
 const welcome = async (req, res) => {
+  total_logs.inc();
     // const { email } = req.body;
     // const user = await User.findOne({ email });
     // req.setHeader('x-access-token',user.token);

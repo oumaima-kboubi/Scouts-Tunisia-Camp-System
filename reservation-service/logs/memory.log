@@ -1,0 +1,26 @@
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:09:07.652Z"}
+{"level":"info","message":"Creating a memory","service":"memory-service","timestamp":"2023-01-15T11:09:07.654Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:11:48.653Z"}
+{"level":"info","message":"Creating a memory","service":"memory-service","timestamp":"2023-01-15T11:11:48.657Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:12:45.355Z"}
+{"level":"info","message":"Creating a memory","service":"memory-service","timestamp":"2023-01-15T11:12:45.359Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:12:57.103Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:12:59.892Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:01.953Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:03.632Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:07.712Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:10.043Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:11.273Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:12.793Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:14.624Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:15.662Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:16.644Z"}
+{"level":"error","message":"Memory deleted","service":"memory-service","timestamp":"2023-01-15T11:13:17.923Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:13:26.373Z"}
+{"level":"info","message":"Creating a memory","service":"memory-service","timestamp":"2023-01-15T11:13:26.374Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:56:23.763Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T11:58:02.384Z"}
+{"level":"info","message":"Creating a memory","service":"memory-service","timestamp":"2023-01-15T11:58:02.387Z"}
+{"level":"error","message":"Memory deleted","request_id":"a90509c4-af6b-494b-a7dc-088ef7a71ee8","service":"memory-service","timestamp":"2023-01-15T12:02:49.984Z"}
+{"level":"info","message":"Hello, world!","timestamp":"2023-01-15T12:03:00.303Z"}
+{"level":"info","message":"Creating a memory","request_id":"863e701f-e395-478b-8e67-d4c30751da17","service":"memory-service","timestamp":"2023-01-15T12:03:00.304Z"}
