@@ -19,4 +19,4 @@ EXPOSE 4200
 
 # ,"--host=0.0.0.0"
 # Start the application
-CMD ["npm", "start", "--host 0.0.0.0"]
+CMD ["npm", "start"]
