@@ -58,8 +58,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./front-service/TunisianScoutsSystemApp
-          file: ./front-service/TunisianScoutsSystemApp/Dockerfile
+          context: ./front-service/tunisian-scouts-system-app
+          file: ./front-service/tunisian-scouts-system-app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ms-front:latest
           cache-from: type=registry,ref=$DOCKER_USERNAME/ms-front_v2:latest
