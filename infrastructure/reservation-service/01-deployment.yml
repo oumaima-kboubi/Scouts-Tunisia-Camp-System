@@ -21,3 +21,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3002
+          env:
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: secrets-res
+                  key: MONGO_URI
