@@ -1,0 +1,4 @@
+apiVersion: v2
+name: memory-project
+description: Helm chart for memory project
+version: 0.1.0

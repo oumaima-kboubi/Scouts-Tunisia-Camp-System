@@ -1,0 +1,11 @@
+deployment:
+  replicas: 1
+image:
+  tag: latest
+  authname: oumaimakboubi/ms-auth:latest
+  reservationname: oumaimakboubi/ms-reservation:latest
+  frontname: oumaimakboubi/ms-front:latest
+http:
+  frontendport: 4200
+  authport: 3001
+  reservationport: 3002

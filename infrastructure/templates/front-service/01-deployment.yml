@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
         - name: ms-front
-          image: oumaimakboubi/ms-front:latest
+          image: {{.Values.image.frontname}}
           imagePullPolicy: Always
           ports:
-            - containerPort: 4200
+            - containerPort: {{.Values.http.frontendport}}
           # livenessProbe:
           #   httpGet:
           #     path: /healthz

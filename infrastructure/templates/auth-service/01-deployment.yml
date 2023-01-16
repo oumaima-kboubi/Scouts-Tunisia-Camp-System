@@ -1,36 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment # type of resource
 metadata:
-  name: ms-reservation
+  name: ms-auth
   labels:
-    app: ms-reservation
+    app: ms-auth
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ms-reservation
+      app: ms-auth
   template:
     metadata:
       annotations:
-        prometheus.io/port: "3002"
+        prometheus.io/port: "3001"
         prometheus.io/path: "/metrics"
         prometheus.io/scrape: "true"
       labels:
-        app: ms-reservation
+        app: ms-auth
     spec:
       containers:
-        - name: ms-reservation
-          image: oumaimakboubi/ms-reservation:latest
+        - name: ms-auth
+          image: {{.Values.image.authname}}
           imagePullPolicy: Always
           ports:
-            - containerPort: 3002
+            - containerPort: {{.Values.http.authport}}
           env:
+            - name: TOKEN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secrets-auth
+                  key: TOKEN_KEY
             - name: MONGO_URI
               valueFrom:
                 secretKeyRef:
-                  name: secrets-res
+                  name: secrets-auth
                   key: MONGO_URI
-
-
-                
+      restartPolicy: Always
