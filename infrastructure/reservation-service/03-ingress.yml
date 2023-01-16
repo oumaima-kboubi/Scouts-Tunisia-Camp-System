@@ -15,4 +15,4 @@ spec:
             service:
               name: ms-reservation-service
               port: 
-                number: 3001
+                number: 3002
