@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ms-front
+  labels:
+    name: ms-front
+
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ms-front.devops
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: ms-front-service
+            port: 
+              number: 4200

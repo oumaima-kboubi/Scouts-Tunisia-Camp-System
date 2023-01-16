@@ -54,11 +54,11 @@ app.use(router);
 
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/res", (req, res) => {
     res.json({ message: "Welcome to ouma application." });
   });
   
-app.get('/metrics', async (req, res) => {
+app.get('/res/metrics', async (req, res) => {
     res.set('Content-Type', promClient.register.contentType);
    const metrics = await promClient.register.metrics();
    res.end(metrics);

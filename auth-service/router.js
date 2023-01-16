@@ -8,12 +8,12 @@ const corsOptions = {
   optionsSuccessStatus: 200 // for some legacy browsers
 }
 
-router.get("/", (req, res) => {
+router.get("/auth", (req, res) => {
   res.send("Let's build a CRUD API!");
 });
 
-router.post("/register", register)
-router.post("/login", login)
-router.post("/welcome",cors(corsOptions), auth, welcome)
+router.post("/auth/register", register)
+router.post("/auth/login", login)
+router.post("/auth/welcome",cors(corsOptions), auth, welcome)
 
 module.exports = router;
