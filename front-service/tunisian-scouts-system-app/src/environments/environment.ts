@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   // baseURIAuth: 'http://127.0.0.1:3001',
   // baseURIMemory: 'http://127.0.0.1:3002'
-  baseURIAuth: 'http://ms-front.devops:3001',
-  baseURIMemory: 'http://ms-front.devops:3002'
+  baseURIAuth: 'http://4.211.64.22:3001/auth',
+  baseURIMemory: 'http://4.211.64.22:3002/res'
 };
 
 /*
