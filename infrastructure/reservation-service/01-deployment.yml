@@ -12,6 +12,10 @@ spec:
       app: ms-reservation
   template:
     metadata:
+      annotations:
+        prometheus.io/port: "3002"
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: "true"
       labels:
         app: ms-reservation
     spec:
@@ -27,3 +31,6 @@ spec:
                 secretKeyRef:
                   name: secrets-res
                   key: MONGO_URI
+
+
+                

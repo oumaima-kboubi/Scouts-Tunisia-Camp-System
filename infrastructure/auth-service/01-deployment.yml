@@ -12,6 +12,10 @@ spec:
       app: ms-auth
   template:
     metadata:
+      annotations:
+        prometheus.io/port: "3001"
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: "true"
       labels:
         app: ms-auth
     spec:
