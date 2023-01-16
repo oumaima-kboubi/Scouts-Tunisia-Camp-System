@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: ms-reservation-service
+spec:
+ selector:
+  app: ms-reservation
+ ports:
+ - name: ms-reservation-port
+   port: 3002
+   targetPort: 3002
