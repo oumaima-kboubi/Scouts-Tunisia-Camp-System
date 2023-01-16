@@ -16,7 +16,7 @@ WORKDIR /usr/share/ngnix/html
 
 RUN rm -rf ./*
 
-COPY --from=builder /app/dist/angular-app .
+COPY --from=builder /usr/src/app/dist/angular-app .
 
 ENTRYPOINT ["ngnix", "-g","daemon off;"]
 
