@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment # type of resource
 metadata:
   name: ms-front
-  labels:
-    app: ms-front
+  labels: {{ toYaml .Values.labelsFront | nindent 4 }}
+    # app: ms-front
 
 spec:  
   replicas: 1

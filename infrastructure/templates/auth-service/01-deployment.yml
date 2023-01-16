@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment # type of resource
 metadata:
   name: ms-auth
-  labels:
-    app: ms-auth
+  labels: {{ toYaml .Values.labelsAuth | nindent 4 }}
+    # app: ms-auth
 
 spec:
   replicas: 1

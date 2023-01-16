@@ -9,3 +9,12 @@ http:
   frontendport: 4200
   authport: 3001
   reservationport: 3002
+labelsAuth:
+  app: ms-auth
+  env: production
+labelsRes:
+  app: ms-reservation
+  env: production
+labelsFront:
+  app: ms-front
+  env: production
