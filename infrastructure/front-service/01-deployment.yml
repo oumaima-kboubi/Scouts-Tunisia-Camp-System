@@ -21,7 +21,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 4200
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 4200
+          # livenessProbe:
+          #   httpGet:
+          #     path: /healthz
+          #     port: 4200
