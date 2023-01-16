@@ -55,3 +55,7 @@ front-service/TunisianScoutsSystemApp/# System Files
 front-service/TunisianScoutsSystemApp/.DS_Store
 front-service/TunisianScoutsSystemApp/Thumbs.db
 front-service/TunisianScoutsSystemApp/
+
+terraform/first-stack/.terraform
+terraform/first-stack/.terraform.lock.hcl
+get_helm.sh
