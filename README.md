@@ -23,17 +23,19 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Devops</a>
+      <a href="#Devops">Devops</a>
       <ul>
         <li><a href="#observability">Observability</a></li>
         <li><a href="#automation">Automation</a></li>
         <li><a href="#deployment">Deployment</a></li>
       </ul>
     </li>
-    <li><a href="#ci-cd-pipeline">CI/CD pipeline</a></li>
+    <li><a href="#ci-pipeline">CI pipeline</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#The App frontend Overview💻">The App frontend Overview💻</a></li>
+    <li><a href="#Contact 📞">Contact 📞</a></li>
   </ol>
 </details>
 
@@ -55,7 +57,9 @@ It uses the **monorepo** strategy ✅:
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
 ### Architecture🧱
+
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi2.png)
+
 ### Built With
 
 * [NodeJS](https://nodejs.org/en/about/), As an asynchronous event-driven JavaScript runtime framework for building server-side applications.
@@ -79,6 +83,8 @@ It uses the **monorepo** strategy ✅:
 * [Prometheus](https://prometheus.io) An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
 * [Grafana](https://grafana.com) Grafana is the open source analytics & monitoring solution for every database.
 * [DataDog](https://www.datadoghq.com) Datadog is a monitoring and analytics tool that can be used to determine performance metrics as well as event monitoring for infrastructure and cloud services.
+* [ArgoCd](https://argo-cd.readthedocs.io/en/stable/) declarative, GitOps continuous delivery tool for Kubernetes.
+
 
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
@@ -89,7 +95,7 @@ In order to run this project and extend its functionalities you need to follow s
 
 ### Prerequisites 🧷
 
-* Make sure that Node.js (>= 10.13.0, except for v13) is installed on your operating system. ( [Download Here](https://nodejs.org/en/download/))
+* Make sure that Node.js (>= 10.13.0) is installed on your operating system. ( [Download Here](https://nodejs.org/en/download/))
 * Make sure that Docker is installed.
 * Make sure that Helm and terraform are installed.
 
@@ -202,11 +208,17 @@ The goal of microstacks is to create a well isolated and maintainable infrastruc
 
 3. **Third Stack**: This section takes care of installing ingress-controller in the cluster
 
+4. **Fourth Stack**: Setting up observability layer in the cluster
+
 * The following is the resource groupe overview: *kubernetes cluster + a container to persist the TF State*
+
+##### PS ( the cluster and the backend are in diffrent regions because of subscription limit )
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/azure.png)
 
-<p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/blob%20container%20TFState%20files.png)
+
 
 ### Deployment 
 
@@ -280,29 +292,30 @@ The project pipeline code can be found under `.github/workflows`, this is a simp
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/images.png)
 
 
-## The App frontend Overview ( in case when you saw the repository i run out of credit 🤷🏼‍♀️)  💻
+## The App frontend Overview💻
+##### ( in case when you saw the repository i run out of credit 🤷🏼‍♀️)
 
-* Login Page 
+* *Login Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/login.png)
 
-* Register Page
+* *Register Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/register.png)
 
-* My Space Page
+* *My Space Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/myspace.png)
 
-* Add Memory Page
+* *Add Memory Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/add.png)
 
-* Edit Memory Page
+* *Edit Memory Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/edit.png)
 
-* Commun Memories Space Page
+* *Commun Memories Space Page*
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/all%20memories.png)
 
@@ -311,9 +324,9 @@ The project pipeline code can be found under `.github/workflows`, this is a simp
 
 ## Contact 📞
 
-Oumaima Kboubi - Kaboubioumaima@gmail.com
+📧 Oumaima Kboubi - Kaboubioumaima@gmail.com
 
-My [CV](https://oumaimakboubi.webipie.me)  Website 🥳
+ My [CV](https://oumaimakboubi.webipie.me)  Website
 
 
 
