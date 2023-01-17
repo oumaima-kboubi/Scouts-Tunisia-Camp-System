@@ -508,3 +508,8 @@
 # helm install -f datadogvalues.yaml --name datadog --set datadog.site='datadoghq.com' --set datadog.apiKey='2a12774275d0dd16c6b94101a0f14769' datadog/datadog
 # helm template memory-chart infrastructure/ --values infrastructure/values.yaml 
 # kubectl  get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d        ArgoCD command
+
+
+# memoru cluster
+# helm install RELEASE_NAME -f datadog-values.yaml --set datadog.site='datadoghq.com' --set datadog.apiKey='2a12774275d0dd16c6b94101a0f14769' datadog/datadog 
+#terraform cluster datadog 4b6cd00497a4d6a90edd50ea1ded72ff
