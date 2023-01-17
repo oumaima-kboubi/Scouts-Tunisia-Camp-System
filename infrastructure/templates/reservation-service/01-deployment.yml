@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment # type of resource
 metadata:
   name: ms-reservation
-  labels: 
-  # {{ toYaml .Values.labelsRes | nindent 4 }}
-    app: ms-reservation
+  labels: {{ toYaml .Values.labelsRes | nindent 4 }}
+    # app: ms-reservation
 
 spec:
   replicas: 3
@@ -22,12 +21,10 @@ spec:
     spec:
       containers:
         - name: ms-reservation
-          image: oumaimakboubi/ms-reservation:latest
-          # {{.Values.image.reservationname}}
+          image: {{.Values.image.reservationname}}
           imagePullPolicy: Always
           ports:
-            - containerPort: 3002
-            # {{.Values.http.reservationport}}
+            - containerPort: {{.Values.http.reservationport}}
           env:
             - name: MONGO_URI
               valueFrom:

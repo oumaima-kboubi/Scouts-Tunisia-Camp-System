@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment # type of resource
 metadata:
   name: ms-auth
-  labels: 
-  # {{ toYaml .Values.labelsAuth | nindent 4 }}
-    app: ms-auth
+  labels: {{ toYaml .Values.labelsAuth | nindent 4 }}
+    # app: ms-auth
 
 spec:
   replicas: 3
@@ -22,12 +21,10 @@ spec:
     spec:
       containers:
         - name: ms-auth
-          image: oumaimakboubi/ms-auth:latest
-          # {{.Values.image.authname}}
+          image: {{.Values.image.authname}}
           imagePullPolicy: Always
           ports:
-            - containerPort: 3001
-            # {{.Values.http.authport}}
+            - containerPort: {{.Values.http.authport}}
           env:
             - name: TOKEN_KEY
               valueFrom:
