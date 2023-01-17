@@ -6,7 +6,7 @@ metadata:
     # app: ms-reservation
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ms-reservation
