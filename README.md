@@ -7,7 +7,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#Architecture 🛠🧱">Architecture</a></li>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#containerization-solution">Containerization Solution</a></li>
         <li><a href="#orchestration-solution">Orchestration Solution</a></li>
@@ -38,7 +38,7 @@
 </details>
 
 ## About this project 🤔
-This project is part of ** DevOps Lab** for the GL5 DevOps field. We are meant to create a distributed application, then use it with different tools to put to real field different DevOps concepts.
+This project is part of **DevOps Lab** for the GL5 DevOps field. We are meant to create a distributed application, then use it with different tools to put to real field different DevOps concepts.
 
 **Scouts Tunisia Camp System** is an application that offers you a safe space to share your memories in your scouting adventures & camps and explore & like other's memories. It's a Frontend/Backend application with basic CRUD features and a DB connection.
 
@@ -54,8 +54,8 @@ It uses the **monorepo** strategy:
 
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
-### Architecture
-# image de l'archi
+### Architecture 🛠🧱
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi2.png)
 ### Built With
 
 * [NodeJS](https://nodejs.org/en/about/), As an asynchronous event-driven JavaScript runtime framework for building server-side applications.
@@ -153,17 +153,42 @@ In order to run this project and extend its functionalities you need to follow s
 
 This project implement the principles of observability, automation and deployment like so:   
 
-### Observebalitiy       
+### Observabalitiy       
 
-#### 1- Metrics   
+#### *1- Metrics*  
 
 I used `prometheus` and and `prom-client` in NodeJS  to expose  http metrics (number of total requests ... ).
 
 **Business logic metrics** : i used business related metrcis which presents a general statistics on the App (number of successful login requests, number of added memory articles ..)
-# image metrics
-#### 2- Logs
-# image logs
-I used the implemented `Logger` logic in NodeJS  and just added a request id , a timestamp of the request as well as different levels of logs.   
+
+⚡First Of all every service has its own metrics routes:
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/auth%20metrics.png)
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/res%20metrics.png)
+
+⚡We can use more sophisticated tools like Prometheus & Grafana Dashboarding tool:
+
+* Prometheus is scrapping all the pods
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/prometheus.png)
+
+* Grafana Dashboarding for the *business metrics* and some other *general metrics*
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/business%20metrics.png)
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/general%20statics.png)
+
+
+#### *2- Logs*
+
+I used the implemented `Logger` logic in NodeJS  and just added a request id , a timestamp of the request as well as different levels of logs. All the structured requests are gathered by *DataDog* 
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/datadog1.png)
+
+* A structured requests is formated into a JSON document according to the labels specified in its implementation.
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/datadog2.png)
 
 ### Automation       
 
@@ -177,7 +202,9 @@ The goal of microstacks is to create a well isolated and maintainable infrastruc
 
 3. **Third Stack**: This section takes care of installing ingress-controller in the cluster
 
-# general overview on the RG image
+* The following is the resource groupe overview: *kubernetes cluster + a container to persist the TF State*
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/azure.png)
 
 ### Deployment       
 
@@ -205,7 +232,7 @@ labelsFront: #front-service
 
 4. **Secrets**
 
-💡 These files varies from a service to an other depnding on its requirments
+💡 These files varies from a service to an other depnding on its requirements
 
 ####  HELM Chart    
 I used Helm Charts to facilitate the use of Terraform microstacks when installing the infrastructure and the app 
@@ -237,11 +264,53 @@ labelsFront:
 ```
 
 ## CI pipeline
+
 The project pipeline code can be found under `.github/workflows`, this is a simple pipeline that just ensures at each push command to the github repo to build the image then save it in the DOCKERHUB repo.
 
-All the jobs are running in parrallel in order to make the image building and pushing musch faster.
+* All the jobs are running in parrallel in order to make the image building and pushing musch faster.
 
-# image de pipeline && dockerhub link
-# add icns baliz
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/CI.png)
+
+* These are the images in the Dokerhub repo
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/images.png)
+
+
+## The App frontend Overview ( in case when you saw the repository i run out of credit 🤷🏼‍♀️) 
+
+* Login Page 
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/login.png)
+
+* Register Page
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/register.png)
+
+* My Space Page
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/myspace.png)
+
+* Add Memory Page
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/add.png)
+
+* Edit Memory Page
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/edit.png)
+
+* Commun Memories Space Page
+
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/all%20memories.png)
+
+
+## Contact
+
+Oumaima Kboubi - Kaboubioumaima@gmail.com
+
+My [CV](https://oumaimakboubi.webipie.me)  Website 🥳
+
+
+
+
 
 
