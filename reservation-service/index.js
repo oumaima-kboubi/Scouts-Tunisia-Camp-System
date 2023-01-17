@@ -12,6 +12,20 @@ const promClient = require('prom-client');
 const {articleAddedCounter} = require('./metrics')
 // const {logger,winston} = require('./logger')
 
+const rateLimit = require('express-rate-limit')
+
+//applying express-rete-limit
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, 
+    max: 15, 
+    standardHeaders: true, 
+    legacyHeaders: false, 
+    skip: (req) => {
+        const { path } = req;
+        const skipPaths = ['/res/metrics'];
+        return skipPaths.includes(path);
+    }
+})
 
 
 require('dotenv').config({
@@ -49,7 +63,7 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(limiter)
 app.use(router);
 
 

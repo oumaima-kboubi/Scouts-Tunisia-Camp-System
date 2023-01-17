@@ -8,6 +8,20 @@ const app=express();
 const path = require('path')
 const promClient = require('prom-client');
 const {activeConnections,total_logs} = require('./metrics')
+const rateLimit = require('express-rate-limit')
+
+//applying express-rete-limit
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, 
+    max: 15, 
+    standardHeaders: true, 
+    legacyHeaders: false, 
+    skip: (req) => {
+        const { path } = req;
+        const skipPaths = ['/auth/metrics'];
+        return skipPaths.includes(path);
+    }
+})
 
 require('dotenv').config({
     path: path.join(__dirname, "/.env")
@@ -40,7 +54,7 @@ connect()
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(limiter)
 app.use(router);
 
 
