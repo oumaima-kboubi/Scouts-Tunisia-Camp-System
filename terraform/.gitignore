@@ -1,0 +1,6 @@
+01-first-stack/.terraform
+01-first-stack/.terraform.lock.hcl
+02-infrastructure/.terraform
+02-infrastructure/.terraform.lock.hcl
+03-ingress-controller/.terraform
+03-ingress-controller/.terraform.lock.hcl

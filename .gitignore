@@ -56,6 +56,12 @@ front-service/TunisianScoutsSystemApp/.DS_Store
 front-service/TunisianScoutsSystemApp/Thumbs.db
 front-service/TunisianScoutsSystemApp/
 
-terraform/first-stack/.terraform
-terraform/first-stack/.terraform.lock.hcl
+terraform/01-first-stack/.terraform
+terraform/01-first-stack/.terraform.lock.hcl
 get_helm.sh
+terraform/02-infrastructure/.terraform
+terraform/02-infrastructure/.terraform.lock.hcl
+terraform/02-infrastructure/terraform.tfvars
+terraform/03-ingress-controller/.terraform
+terraform/03-ingress-controller/.terraform.lock.hcl
+terraform/01-first-stack/.terraform
