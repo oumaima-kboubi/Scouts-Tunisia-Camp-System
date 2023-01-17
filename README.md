@@ -7,7 +7,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#Architecture 🛠🧱">Architecture</a></li>
+        <li><a href="#Architecture🧱">Architecture</a></li>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#containerization-solution">Containerization Solution</a></li>
         <li><a href="#orchestration-solution">Orchestration Solution</a></li>
@@ -44,7 +44,7 @@ This project is part of **DevOps Lab** for the GL5 DevOps field. We are meant to
 
 You can access the **Memory Space** [here](http://4.211.64.22/register) 🥳
 
-It uses the **monorepo** strategy:    
+It uses the **monorepo** strategy ✅:    
 
 1- **front-service/tunisian-scouts-system-app** : The frontend application that will be exposed to the users.   
 2- **auth-service**: a service that handles authentification and users. 
@@ -54,7 +54,7 @@ It uses the **monorepo** strategy:
 
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
-### Architecture 🛠🧱
+### Architecture🧱
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi2.png)
 ### Built With
 
@@ -83,17 +83,17 @@ It uses the **monorepo** strategy:
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
 
-## Getting Started
+## Getting Started 🎉
 
 In order to run this project and extend its functionalities you need to follow some few steps : 
 
-### Prerequisites
+### Prerequisites 🧷
 
 * Make sure that Node.js (>= 10.13.0, except for v13) is installed on your operating system. ( [Download Here](https://nodejs.org/en/download/))
 * Make sure that Docker is installed.
 * Make sure that Helm and terraform are installed.
 
-### Installation
+### Installation 🔧
 
 1. Clone the repo
    ```sh
@@ -149,7 +149,7 @@ In order to run this project and extend its functionalities you need to follow s
  
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
-## Devops   
+## Devops  ♾️
 
 This project implement the principles of observability, automation and deployment like so:   
 
@@ -206,7 +206,9 @@ The goal of microstacks is to create a well isolated and maintainable infrastruc
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/azure.png)
 
-### Deployment       
+<p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
+
+### Deployment 
 
 ####  YAML files    
 
@@ -263,7 +265,9 @@ labelsFront:
   
 ```
 
-## CI pipeline
+<p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
+
+## CI pipeline ♾️
 
 The project pipeline code can be found under `.github/workflows`, this is a simple pipeline that just ensures at each push command to the github repo to build the image then save it in the DOCKERHUB repo.
 
@@ -276,7 +280,7 @@ The project pipeline code can be found under `.github/workflows`, this is a simp
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/images.png)
 
 
-## The App frontend Overview ( in case when you saw the repository i run out of credit 🤷🏼‍♀️) 
+## The App frontend Overview ( in case when you saw the repository i run out of credit 🤷🏼‍♀️)  💻
 
 * Login Page 
 
@@ -303,7 +307,9 @@ The project pipeline code can be found under `.github/workflows`, this is a simp
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/all%20memories.png)
 
 
-## Contact
+<p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
+
+## Contact 📞
 
 Oumaima Kboubi - Kaboubioumaima@gmail.com
 
