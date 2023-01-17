@@ -12,6 +12,7 @@ const getMemories = (req, res) => {
       res.send(err);
     }
     res.json(memory);
+    logger.info('Get All Memories' , { request_id: req.requestId});
   });
 };
 const getMemoriesById = (req, res) => {
@@ -22,7 +23,7 @@ const getMemoriesById = (req, res) => {
       
       res.send(err);
     }
-   
+    logger.info('Memory by username: '+req.params.username , { request_id: req.requestId});
     res.json(memory);
   });
 };
@@ -40,12 +41,12 @@ const createMemory = (req, res) => {
         articleAddedCounter.inc({'route': '/memories', 'status_code': 200,'requestType':'post'})
         res.send(err);
       }
-      logger.info('Hello, world!');
+      logger.info('Memory created' , { request_id: req.requestId});
       // logger.info('Memory Article Created!');
       // winston.log('info', "Memory Article Created!");
       articleAddedCounter.inc({'route': '/memories', 'status_code': 200,'requestType':'post'})
       // console.log(req.requestId);
-      childLogger.info('Creating a memory', { request_id: req.requestId});
+      logger.info('Creating a memory', { request_id: req.requestId});
       res.json(memory);
     });
   };
@@ -65,7 +66,11 @@ const createMemory = (req, res) => {
       (err, Memory) => {
         if (err) {
           res.send(err);
-        } else res.json(Memory);
+        } else
+        {
+          logger.info('Memory Edited' , { request_id: req.requestId});
+        res.json(Memory);
+        }
       }
     );
   };
@@ -74,11 +79,11 @@ const createMemory = (req, res) => {
     Memory.deleteOne({ _id: req.params.memoryID })
       .then(() => 
       {
-        childLogger.error('Memory deleted', { request_id: req.requestId});
+        logger.info('Memory Deleted' , { request_id: req.requestId});
         res.json({ message: "Memory Deleted" })
       }).catch((err) =>{ 
         res.send(err)
-        childLogger.info('Memory isn\'t deleted', { request_id: req.requestId});
+        logger.info('Memory ERROR Deleted' , { request_id: req.requestId});
       });
   };
   
