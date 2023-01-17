@@ -513,3 +513,4 @@
 # memoru cluster
 # helm install RELEASE_NAME -f datadog-values.yaml --set datadog.site='datadoghq.com' --set datadog.apiKey='2a12774275d0dd16c6b94101a0f14769' datadog/datadog 
 #terraform cluster datadog 4b6cd00497a4d6a90edd50ea1ded72ff
+# grafanapass  QxBHjKC6dicJz3JVoFRjPpm24FzwGMjfRefkDsdp
