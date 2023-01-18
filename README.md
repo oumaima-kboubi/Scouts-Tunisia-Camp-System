@@ -55,7 +55,7 @@ It uses the **monorepo** strategy ✅:
 
 ### Architecture🧱
 
-![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi2.png)
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi3.png)
 
 ### Built With 🛠️
 
