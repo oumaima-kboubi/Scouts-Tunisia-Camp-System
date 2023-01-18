@@ -31,11 +31,8 @@
       </ul>
     </li>
     <li><a href="#ci-pipeline">CI pipeline</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#The App frontend Overview💻">The App frontend Overview💻</a></li>
-    <li><a href="#Contact 📞">Contact 📞</a></li>
+    <li><a href="#The App frontend Overview💻">The App frontend Overview</a></li>
+    <li><a href="#Contact 📞">Contact</a></li>
   </ol>
 </details>
 
@@ -48,11 +45,11 @@ You can access the **Memory Space** [here](http://4.211.64.22/register) 🥳
 
 It uses the **monorepo** strategy ✅:    
 
-1- **front-service/tunisian-scouts-system-app** : The frontend application that will be exposed to the users.   
-2- **auth-service**: a service that handles authentification and users. 
-3- **reservation-service**: the core of the application (CRUD functions).  
-4- **infrastructure**: diffrent files to prepare the deployment of the app infra and the app setup.   
-5- **terraform-microstacks**: terraform files to initiate the infrastructure of the project.  
+1- ⚡ **front-service/tunisian-scouts-system-app** : The frontend application that will be exposed to the users.   
+2- ⚡ **auth-service**: a service that handles authentification and users. 
+3- ⚡ **reservation-service**: the core of the application (CRUD functions).  
+4- ⚡ **infrastructure**: diffrent files to prepare the deployment of the app infra and the app setup.   
+5- ⚡ **terraform-microstacks**: terraform files to initiate the infrastructure of the project.  
 
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
@@ -60,7 +57,7 @@ It uses the **monorepo** strategy ✅:
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/archi2.png)
 
-### Built With
+### Built With 🛠️
 
 * [NodeJS](https://nodejs.org/en/about/), As an asynchronous event-driven JavaScript runtime framework for building server-side applications.
 * [ExpressJS](https://expressjs.com/fr/), A minimalist and flexible Node.js web application infrastructure.
@@ -70,16 +67,16 @@ It uses the **monorepo** strategy ✅:
 * [HELM](https://helm.sh) A package manager for Kubernetes.
 
 
-### Containerization Solution
+### Containerization Solution 🛢️
 * [Docker](https://www.docker.com/), a solution for building,sharing and running application images.
 
-### Orchestration Solution
+### Orchestration Solution 🎵
 * [Kubernetes](https://kubernetes.io)  a solution for orchestrating containers.
 
-### Provisioning Solution
+### Provisioning Solution ☁️
 * [Terraform](https://www.terraform.io/), a solution for provisioning, changing, and versioning resources on any environment.
 
-### Monitoring Solution
+### Monitoring Solution 👀
 * [Prometheus](https://prometheus.io) An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
 * [Grafana](https://grafana.com) Grafana is the open source analytics & monitoring solution for every database.
 * [DataDog](https://www.datadoghq.com) Datadog is a monitoring and analytics tool that can be used to determine performance metrics as well as event monitoring for infrastructure and cloud services.
@@ -111,7 +108,7 @@ In order to run this project and extend its functionalities you need to follow s
    ```sh
    npm install
    ```
-2.1 Add a **.env** file for required projects
+2. 1- Add a **.env** file for required projects
    ```sh
    #AUTH-SERVICE
    MONGO_URI="MongoDb connection string" # for auth-service
@@ -123,20 +120,20 @@ In order to run this project and extend its functionalities you need to follow s
    APP_PORT=3002
    ...
    ```
- 2.2 run all projects, ensure that all ports are well set and enjoy!   
+ 2. 2- run all projects, ensure that all ports are well set and enjoy!   
  
 ##### Or if you want to use docker   
  
  3. make sure you have docker installed.
  
- 3.1. pull the images : 
+ 3. 1- pull the images : 
  ``` sh
  docker pull oumaimakboubi/ms-auth:latest # auth-service
  docker pull oumaimakboubi/ms-reservation:latest # reservation-service
  docker pull oumaimakboubi/ms-front:latest # front-service
  ```
  
- 3.2 run the following docker run command:  
+ 3. 2- run the following docker run command:  
  ``` sh
  sudo docker run -d -p 3001:3001 --name ms-auth oumaimakboubi/ms-auth:latest
  sudo docker run -d -p 3002:3002 --name ms-auth oumaimakboubi/ms-reservation:latest
@@ -159,7 +156,7 @@ In order to run this project and extend its functionalities you need to follow s
 
 This project implement the principles of observability, automation and deployment like so:   
 
-### Observabalitiy       
+### Observabalitiy 👀    
 
 #### *1- Metrics*  
 
@@ -196,9 +193,9 @@ I used the implemented `Logger` logic in NodeJS  and just added a request id , a
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/datadog2.png)
 
-### Automation       
+### Automation ⚡
 
-####  Microstacks    
+####  Microstacks  
 
 The goal of microstacks is to create a well isolated and maintainable infrastructure layers.   
 
@@ -220,7 +217,7 @@ The goal of microstacks is to create a well isolated and maintainable infrastruc
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/blob%20container%20TFState%20files.png)
 
 
-### Deployment 
+### Deployment ☁️
 
 ####  YAML files    
 
