@@ -211,7 +211,7 @@ The goal of microstacks is to create a well isolated and maintainable infrastruc
 
 ##### PS ( the cluster and the backend are in diffrent regions because of subscription limit )
 
-![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/azure.png)
+![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/azure2.png)
 
 
 ![image](https://github.com/oumaima-kboubi/Scouts-Tunisia-Camp-System/blob/master/img/blob%20container%20TFState%20files.png)
