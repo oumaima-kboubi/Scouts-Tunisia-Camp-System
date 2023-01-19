@@ -274,6 +274,9 @@ labelsFront:
   
 ```
 
+
+Concerning the deployment strategy I couldn't work on that due to time contraint but I choose a blue/green deployment because I want to maintain two identical production environments. The use case of this app consists on having an app that is always up and running especially during the national and international camps ( A/B testing won't be the best choice in this case). So during the deployment i need to have one  environment which is the active environment (blue) and the other is inactive (green). During an update I wanted the new version deployed and tested and redirecting the user's traffic after it has been verified to be working as it should.
+
 <p align="right">(<a href="#here"> Go to the 🔝</a>)</p>
 
 ## CI pipeline ♾️
